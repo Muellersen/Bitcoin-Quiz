@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+
+	<link rel="apple-touch-icon" href="grafik/touch57x57.png" />
+
+	<title>Bitcoin Quiz</title>
+	
+	<link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.min.css" />
+	<script src="jquery/jquery.js"></script>
+	<script src="jquery/jquery.mobile-1.4.5.min.js"></script>
+	
+</head>
+<body>
+<!------------------------------------------------------------------->
+<div data-role="page" id="home" data-theme="a" class="hauptrahmen">
+
+	<div data-role="header">
+		<h1>Bitcoin Quiz</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<img src="grafik/bitcoin_logo.png" width = "100%"/>
+		<p>
+			Sie haben sicherlich schon einmal davon gehört, wenn nicht, dann jetzt. Bitcoin ist eine Kryptowährung, welche als 
+			erstes Erfunden wurde. Bitcoin wurde erfunden, um eine unabhänige Währung zu erschaffen, welche nicht von zentralen
+			Institutionen oder Banken kontrolliert wird. Diese Währung wird immer bekannter und immer mehr Unternehmen akzeptieren 
+			Bitcoin als Zahlungsmittel. Vor kurzem kündigte sogar PayPal die Einbindung von Bitcoin an. Diese und weitere Faktoren sorgten
+			dafür, dass ein einzelner Bitcoin extremen Wert hat. Machen Sie sich mit Bitcoin vertraut und spielen Sie dieses Quiz.
+			Bevor Sie starten, gehen Sie noch bitte in die Einstellungen.
+		</p>
+		<a href="#frage1" id="start" onclick="zeigeBegrüßung()" data-transition="pop" class="ui-btn ui-corner-all">Starte das Quiz</a>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<div data-role="navbar">
+			<ul>
+			<li><a href="#Impressum" data-icon="grid">Impressum</a></li>
+			<li><a href="#Hilfeseite" data-icon="star">Hilfe</a></li>
+			<li><a href="#Einstellungen" data-icon="gear">Einstellungen</a></li>
+		</ul>
+		</div><!-- /navbar -->
+	</div><!-- /footer -->
+
+</div><!-- /page -->
+<!------------------------------------------------------------------->
+<div data-role="page" id="frage1" data-theme="a" class="hauptrahmen">
+
+	<div data-role="header">
+		<h1>Bitcoin Quiz</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<p id="greeting">
+		
+		</p>
+		<p>
+			Wer hat Bitcoin erschaffen?
+		</p>
+		<img src="grafik/bitcoin1.jpg" width = "100%"/>
+		<a id="1.1" href="#auswertung" onclick="pruefeAuswertung(false, 1)" data-transition="slide" class="ui-btn ui-corner-all">Ken Watanabe</a>
+		<a href="#auswertung" onclick="pruefeAuswertung(true, 1)" data-transition="slide" class="ui-btn ui-corner-all">Satoshi Nakamoto</a>
+		<a href="#auswertung" onclick="pruefeAuswertung(false, 1)" data-transition="slide" class="ui-btn ui-corner-all">Kakashi Hatake</a>
+		<a id="1.2" href="#auswertung" onclick="pruefeAuswertung(false, 1)" data-transition="slide" class="ui-btn ui-corner-all">Shinzo Abe</a>
+		<a href="#frage1" onclick="joker(1)" class="ui-btn ui-btn-inline">Joker</a>
+
+		<a href="#home" onclick="löschePunkte()" data-transition="slide" data-direction="reverse" class="ui-btn ui-mini">Zurück zur Startseite</a>
+	
+	</div><!-- /content -->
+</div><!-- /page -->
+<!------------------------------------------------------------------->
+<div data-role="page" id="frage2" data-theme="a" class="hauptrahmen">
+
+	<div data-role="header">
+		<h1>Bitcoin Quiz</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<p id="greeting2">
+		
+		</p>
+		<p>
+	       Wie hoch war das Alltimehigh von 1 Bitcoin in Euro, Stand 01.01.2021?
+		</p>
+		<img src="grafik/alltimehigh.jpg" width = "100%"/>
+		<form>
+		    <label for="nr2">Schätzen Sie!</label>
+		    <input type="range" name="nr2" id="nr2" min="0" max="100000" value="50000">
+		</form>
+		<a href="#auswertung" onclick="pruefeAuswertung(true, 2)" data-transition="slide" class="ui-btn ui-corner-all">Auswerten</a>
+		<a href="#frage2" onclick="joker(2)" class="ui-btn ui-btn-inline">Joker</a>
+		<a href="#home" onclick="löschePunkte()" data-transition="slide" data-direction="reverse" class="ui-btn ui-mini">Zurück zur Startseite</a>
+	
+	</div><!-- /content -->
+</div><!-- /page -->
+<!------------------------------------------------------------------->
+<div data-role="page" id="frage3" data-theme="a" class="hauptrahmen">
+
+	<div data-role="header">
+		<h1>Bitcoin Quiz</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<p id="greeting3">
+			
+		</p>
+		<img src="grafik/bitcoin2.jpg" width = "100%"/>
+		<p>
+			Wie werden Transaktionen gespeichert?
+		</p>
+		<a id="3.1" href="#auswertung" onclick="pruefeAuswertung(false, 3)" data-transition="slide" class="ui-btn ui-corner-all">Gar nicht</a>
+		<a id="3.2" href="#auswertung" onclick="pruefeAuswertung(false, 3)" data-transition="slide" class="ui-btn ui-corner-all">Papier</a>
+		<a href="#auswertung" onclick="pruefeAuswertung(false, 3)" data-transition="slide" class="ui-btn ui-corner-all">Zentrale Server</a>
+		<a href="#auswertung" onclick="pruefeAuswertung(true, 3)" data-transition="slide" class="ui-btn ui-corner-all">Blockchain</a>
+		<a href="#frage3" onclick="joker(3)" class="ui-btn ui-btn-inline">Joker</a>
+		<a href="#home" onclick="löschePunkte()" data-transition="slide" data-direction="reverse" class="ui-btn ui-mini">Zurück zur Startseite</a>
+	
+	</div><!-- /content -->
+</div><!-- /page -->
+<!------------------------------------------------------------------->
+<div data-role="page" id="frage4" data-theme="a" class="hauptrahmen">
+
+	<div data-role="header">
+		<h1>Bitcoin Quiz</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<p id="greeting4">
+		
+		</p>
+		<p>
+	       Wieso können Bitcoin verloren gehen?
+		</p>
+		<img src="grafik/bitcoinlost.jpg" width = "100%"/>
+		<a href="#auswertung" onclick="pruefeAuswertung(false, 4)" data-transition="slide" class="ui-btn ui-corner-all">Durch Verlust des Public Keys</a>
+		<a id="4.1" href="#auswertung" onclick="pruefeAuswertung(false, 4)" data-transition="slide" class="ui-btn ui-corner-all">Diebstahl</a>
+		<a href="#auswertung" onclick="pruefeAuswertung(true, 4)" data-transition="slide" class="ui-btn ui-corner-all">Durch Verlust des Private Keys</a>
+		<a id="4.2" href="#auswertung" onclick="pruefeAuswertung(false, 4)" data-transition="slide" class="ui-btn ui-corner-all">In den Müll schmeißen</a>
+		<a href="#frage4" onclick="joker(4)" class="ui-btn ui-btn-inline">Joker</a>
+		<a href="#home" onclick="löschePunkte()" data-transition="slide" data-direction="reverse" class="ui-btn ui-mini">Zurück zur Startseite</a>
+	
+	</div><!-- /content -->
+</div><!-- /page -->
+<!------------------------------------------------------------------->
+<div data-role="page" id="frage5" data-theme="a" class="hauptrahmen">
+
+	<div data-role="header">
+		<h1>Bitcoin Quiz</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<p id="greeting5">
+			
+		</p>
+		<img src="grafik/währungen.jpg" width = "100%"/>
+		<form>
+			    <fieldset data-role="controlgroup">
+		        <legend>Welche Kryptowährungen gibt es noch?</legend>
+		        <input type="checkbox" name="checkbox-v-2a" id="checkbox-v-2a">
+		        <label for="checkbox-v-2a">Ethereum</label>
+		        <input type="checkbox" name="checkbox-v-2b" id="checkbox-v-2b">
+		        <label for="checkbox-v-2b">LiteCoin</label>
+		        <input type="checkbox" name="checkbox-v-2c" id="checkbox-v-2c">
+		        <label for="checkbox-v-2c">DA-Coin</label>
+		</fieldset>
+		</form>
+		<p id="nr5joker">
+
+		</p>
+		<a href="#frage5" onclick="joker(5)" class="ui-btn ui-btn-inline">Joker</a>
+		<a href="#auswertung" onclick="pruefeAuswertung(false, 5)" data-transition="slide" class="ui-btn ui-corner-all">Weiter</a>
+		<a href="#home" onclick="löschePunkte()" data-transition="slide" data-direction="reverse" class="ui-btn ui-mini">Zurück zur Startseite</a>
+	
+	</div><!-- /content -->
+</div><!-- /page -->
+<!------------------------------------------------------------------->
+<div data-role="page" id="frage6" data-theme="a" class="hauptrahmen">
+
+	<div data-role="header">
+		<h1>Bitcoin Quiz</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<p id="greeting6">
+		
+		</p>
+		<p>
+	       In welchem Jahr hat Bitcoin angefangen zu existieren?
+		</p>
+		<img src="grafik/bitcoinmining.jpg" width = "100%"/>
+		<form>
+			<label for="text-3">Geben Sie hier das Jahr ein.</label>
+			<input id="nr6" type="text" data-clear-btn="true" name="text-3" id="text-3" value="">
+		</form>
+		<p id="nr6joker">
+
+		</p>
+		<a href="#frage6" onclick="joker(6)" class="ui-btn ui-btn-inline">Joker</a>
+		<a href="#auswertung" onclick="pruefeAuswertung(false, 6)" data-transition="slide" class="ui-btn ui-corner-all">Weiter</a>
+		<a href="#home" onclick="löschePunkte()" data-transition="slide" data-direction="reverse" class="ui-btn ui-mini">Zurück zur Startseite</a>
+	
+	</div><!-- /content -->
+</div><!-- /page -->
+<!------------------------------------------------------------------->
+<div data-role="page" id="auswertung" data-theme="a" class="hauptrahmen">
+	
+	<div data-role="header">
+		<h1>Bitcoin Quiz</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<img id="smiley" src="grafik/user.png" width = "100%"/>
+		<h2><p id="auswertungsmeldung">
+			Spaceholder
+		</p></h2>
+		<p id="lösungssatz">
+
+		</p>
+		<p id="punkte">???</p>
+		<a id="auswlink" href="#frage4" data-transition="slide" class="ui-btn ui-corner-all">Weiter</a>	
+		<a href="#home" onclick="löschePunkte()" data-transition="slide" data-direction="reverse" class="ui-btn ui-mini">Zurück zur Startseite</a>
+	
+	</div><!-- /content -->
+</div><!-- /page -->
+<!------------------------------------------------------------------->
+<div data-role="page" id="Impressum" data-theme="a" class="hauptrahmen">
+
+	<div data-role="header">
+		<h1>Bitcoin Quiz</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<p>
+			<h1>Impressum</h1>
+			Name: Patrick Müller</br>
+			Matrikelnummer: 4900825
+		</p>
+		<a href="#home" data-transition="pop" class="ui-btn ui-corner-all">Zurück</a>	
+	</div><!-- /content -->
+
+</div><!-- /page -->
+<!------------------------------------------------------------------->
+<div data-role="page" id="Einstellungen" data-theme="a" class="hauptrahmen">
+
+	<div data-role="header">
+		<h1>Bitcoin Quiz</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<p>
+			<h2>Persönliche Daten</h2>
+		</p>
+		<form>
+			<label for="text-3">Dein Name:</label>
+			<input id="spielername" type="text" data-clear-btn="true" name="spielername" id="spielername" value="">
+		</form>
+		<form>
+		    <label for="flip-checkbox-3">Anrede:</label>
+		    <input type="checkbox" data-role="flipswitch" name="anrede" id="anrede" data-on-text="Frau" data-off-text="Herr" data-wrapper-class="custom-size-flipswitch">
+		</form>
+		<form>
+		    <label for="slider-1">Dein Alter:</label>
+		    <input type="range" name="slider-1" id="slider-1" min="0" max="100" value="50">
+		</form>
+		<div class="ui-field-contain">
+		    <label for="select-custom-1">Wo wohnst du?</label>
+		    <select name="select-custom-1" id="select-custom-1" data-native-menu="false">
+		        <option value="1">Schweiz</option>
+		        <option value="2">Österreich</option>
+		        <option value="3">Deutschland</option>
+		        <option value="4">USA</option>
+		    </select>
+		</div>
+		<a href="#home" onclick="save()" data-transition="pop" class="ui-btn ui-corner-all">Speichern und Zurück</a>	
+	</div><!-- /content -->
+
+</div><!-- /page -->
+<!------------------------------------------------------------------->
+<div data-role="page" id="Hilfeseite" data-theme="a" class="hauptrahmen">
+
+	<div data-role="header">
+		<h1>Bitcoin Quiz</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<p>
+			<h2>Hilfeseite</h2>
+			Es gibt insgesamt 6 Fragen und jeweils einen Joker, welcher bei Benutzung das Antworten erleichtert,
+			jedoch die Punktzahl etwas verringert. Die höchste Punktzahl die man erreichen kann liegt bei 6 Punkten.
+			Sollte man das Quiz vorzeitig von vorne starten, indem man auf den Zurück-Knopf drückt, so wird man auch weniger 
+			Punkte bekommen können. Einzelne Fragen können nicht wiederholt werden, da das Quiz ja sonst keinen Sinn machen würde. 
+			Versuchen Sie das Quiz ohne Wiederholung und mit so wenig wie möglich Jokern zu beantworten. Viel Glück!
+		</p>
+			
+		<a href="#home" data-transition="pop" class="ui-btn ui-corner-all">Zurück</a>	
+	</div><!-- /content -->
+
+</div><!-- /page -->
+<!------------------------------------------------------------------->
+<div data-role="page" id="Abschlussseite" data-theme="a" class="hauptrahmen">
+
+	<div data-role="header">
+		<h1>Bitcoin Quiz</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<img src="grafik/bitcoin_logo.png" width = "100%"/>
+		<p>
+			<h3>Vielen Dank, dass Sie das Quiz gespielt haben. Wir hoffen, Sie konnten etwas über Bitcoin lernen.</h3></br>
+			Ihr Punktestand:</br>
+		</p>
+		<p id="ende">
+			???
+		</p>
+		<p id="ende1">
+			???
+		</p>
+		
+		<a href="#home" onclick="reset()" data-transition="slide" data-direction="reverse" class="ui-btn ui-corner-all">Zurück zur Startseite</a>	
+	</div><!-- /content -->
+
+</div><!-- /page -->
+<!------------------------------------------------------------------->
+<script>
+	let richtigeAntworten = 0;
+	let falscheAntworten = 0;
+	let name="";
+	let alter=0;
+	let anrede="";
+	let wohnort="";
+	let multiplier=1;
+	let joker1=false;
+	let joker2=false;
+	let joker3=false;
+	let joker4=false;
+	let joker5=false;
+	let joker6=false;
+	let daten=false;
+
+	function pruefeAuswertung(antwort, fragennr) {
+		let lösungssatz="";
+		if(fragennr == 1) {
+			lösungssatz = "Satoshi Nakamoto ist ein Pseudonym, unter dem der Entwickler, die Entwicklerin oder ein Team gearbeitet hat und Bitcoin erschaffen hat."
+		}
+
+		if(fragennr == 2) {
+			x = document.getElementById("nr2").value;
+			if(23000 <= x && x <= 25000) {
+				antwort = true;
+				lösungssatz = "Als die Corona-Krise begonnen hat ist der Preis für ein Bitcoin auf ca. 4000 Euro gesunken. Danach ist er mit dem Halving wieder gestiegen und auf 24000 Euro gestiegen."
+			} else {
+				antwort = false;
+				lösungssatz = "Als die Corona-Krise begonnen hat ist der Preis für ein Bitcoin auf ca. 4000 Euro gesunken. Danach ist er mit dem Halving wieder gestiegen und auf 24000 Euro gestiegen."
+			}
+		}
+
+		if(fragennr == 3) {
+			lösungssatz = "Die Blockchain besteht aus vielen Blöcken, in denen alle Transaktionen gespeichert sind. Neue Blocks müssen durch rechenaufwändige Prozesse erstellt werden, dies nennt sich Mining.";
+		}
+		
+		if(fragennr == 4) {
+			lösungssatz = "Ohne den Private Key kann man seine Bitcoins nicht an andere Adressen senden und man hat somit auch keinen Zugriff auf seine Bitcoins mehr. Sie sind quasi für immer in der Wallet gefangen."
+		}
+
+		if(fragennr == 5) {
+			if (document.getElementById("checkbox-v-2a").checked &&
+				document.getElementById("checkbox-v-2b").checked &&
+				!(document.getElementById("checkbox-v-2c").checked)) {
+				antwort = true;
+				lösungssatz = "DA-Coin gibt es nicht. Ethereum und Litecoin sind zwei der größeren Kryptowährungen.";
+			} else {
+				lösungssatz = "DA-Coin gibt es nicht. Ethereum und Litecoin sind zwei der größeren Kryptowährungen.";
+			}
+			
+		}
+
+		if(fragennr == 6) {
+			x = document.getElementById("nr6").value;
+			if(x == "2009"){
+				antwort = true;
+				lösungssatz = "Entwickelt wurde Bitcoin zwar schon früher aber es wurde am 3. Januar 2009 gestartet.";
+			} else {
+				antwort = false;
+				lösungssatz = "Entwickelt wurde Bitcoin zwar schon früher aber es wurde am 3. Januar 2009 gestartet.";
+			}
+		}
+
+		document.getElementById("lösungssatz").innerHTML = lösungssatz;
+
+		if(antwort == true) {
+			document.getElementById("auswertungsmeldung").innerHTML="Richtig";
+			document.getElementById("smiley").setAttribute("src", "grafik/richtig.jpg");
+			richtigeAntworten++
+		} else {
+			document.getElementById("auswertungsmeldung").innerHTML="Falsch";
+			document.getElementById("smiley").setAttribute("src", "grafik/falsch.jpg");
+			falscheAntworten++
+		}
+
+		if(fragennr == 6){
+			abschluss();
+			document.getElementById("auswlink").setAttribute("href", "#Abschlussseite")
+			document.getElementById("punkte").innerHTML="Richtige Antworten: " + richtigeAntworten + ", Falsche Antworten: " + falscheAntworten;
+		} else {
+			let nächsteFrage=fragennr+1;
+			document.getElementById("auswlink").setAttribute("href", "#frage" + nächsteFrage);
+			document.getElementById("punkte").innerHTML="Richtige Antworten: " + richtigeAntworten + ", Falsche Antworten: " + falscheAntworten;
+		}
+    }
+
+	function abschluss() {
+		// set attributes of the abschluss page
+		document.getElementById("ende").innerHTML="Richtige Antworten: " + richtigeAntworten + ", Falsche Antworten: " + falscheAntworten;
+		let val = richtigeAntworten * multiplier;
+		val = Math.round(val);
+		document.getElementById("ende1").innerHTML="Glückwunsch " + name + ", daraus ergibt sich dieses Endergebnis: " + val; 
+	}
+
+	function löschePunkte() {
+		richtigeAntworten = 0;
+		falscheAntworten = 0;
+		multiplier = 0.4;
+		if(joker1 == true){
+			joker1 = false;
+			document.getElementById("1.1").style.display = "block";
+			document.getElementById("1.2").style.display = "block";
+		}
+		if(joker2 == true) {
+			joker2 = false;
+			document.getElementById("nr2").setAttribute("max", "100000");
+			document.getElementById("nr2").setAttribute("value", "30000");
+		}
+		if(joker3 == true) {
+			joker3 = false;
+			document.getElementById("3.1").style.display = "block";
+			document.getElementById("3.2").style.display = "block";
+		}
+		if(joker4 == true) {
+			joker4 = false;
+			document.getElementById("4.1").style.display = "block";
+			document.getElementById("4.2").style.display = "block";
+		}
+		if(joker5 == true) {
+			joker5 = false;
+			document.getElementById("nr5joker").innerHTML = "";
+		}
+		if(joker6 == true) {
+			joker6 = false;
+			document.getElementById("nr6joker").innerHTML = "";
+		}
+
+	}
+
+	function save() {
+		daten = true;
+		name = document.getElementById("spielername").value;
+		alter = document.getElementById("slider-1").value;
+		if (document.getElementById("select-custom-1").value == 1) {
+			wohnort = "Schweiz";
+		} else if (document.getElementById("select-custom-1").value == 2) {
+			wohnort = "Österreich";
+		} else if (document.getElementById("select-custom-1").value == 3) {
+			wohnort = "Deutschland";
+		} else if (document.getElementById("select-custom-1").value == 4) {
+			wohnort = "USA";
+		}
+		if (document.getElementById("anrede").checked) {
+			anrede="Frau"
+		} else {
+			anrede="Herr"
+		}
+	}
+
+	function zeigeBegrüßung() {
+		if(daten == false) {
+			document.getElementById("start").setAttribute("href", "#Einstellungen");
+		} else {
+			document.getElementById("start").setAttribute("href", "#frage1");
+		}
+
+		let ausgabe="";
+		if (wohnort == "USA") {
+			ausgabe = "Hello " + anrede + " " + name + ", ";
+		} else if (wohnort == "Deutschland") {
+			ausgabe = "Hallo " + anrede + " " + name + ", ";
+		} else if (wohnort == "Österreich") {
+			ausgabe = "Grüß Gott " + anrede + " " + name + ", ";
+		} else if (wohnort == "Schweiz") {
+			ausgabe = "Grüezi " + anrede + " " + name + ", ";
+		} else {
+			ausgabe = "Hallo " + anrede + " " + name + ", ";
+		}
+
+		if(alter < 18) {
+			ausgabe = ausgabe + "hier ist Deine erste Frage.";
+		} else {
+			ausgabe = ausgabe + "hier ist Ihre erste Frage.";
+		}
+
+		let ausgabe2="";
+		if (alter < 18) {
+			ausgabe2 = "Hier ist Deine nächste Frage, " + anrede + " " + name;
+		} else {
+			ausgabe2 = "Hier ist Ihre nächste Frage, " + anrede + " " + name;
+		}
+
+
+		document.getElementById("greeting").innerHTML = ausgabe;
+		document.getElementById("greeting2").innerHTML = ausgabe2;
+		document.getElementById("greeting3").innerHTML = ausgabe2;
+		document.getElementById("greeting4").innerHTML = ausgabe2;
+		document.getElementById("greeting5").innerHTML = ausgabe2;
+		document.getElementById("greeting6").innerHTML = ausgabe2;
+	}
+
+	function joker(nr) {
+		multiplier = multiplier - 0.1;
+		if(nr == 1){
+			joker1 = true;
+			document.getElementById("1.1").style.display = "none";
+			document.getElementById("1.2").style.display = "none";
+		} else if (nr == 2) {
+			joker2 = true;
+			document.getElementById("nr2").setAttribute("max", "30000");
+			document.getElementById("nr2").setAttribute("value", "15000");
+		} else if (nr == 3) {
+			joker3 = true;
+			document.getElementById("3.1").style.display = "none";
+			document.getElementById("3.2").style.display = "none";
+		} else if (nr == 4) {
+			joker4 = true;
+			document.getElementById("4.1").style.display = "none";
+			document.getElementById("4.2").style.display = "none";
+		} else if (nr == 5) {
+			joker5 = true;
+			document.getElementById("nr5joker").innerHTML = "Auf dem Bild sieht man zwei der oben genannten Währungen, eine weitere jedoch sieht so aus als wäre sie dabei, ist es aber nicht.";
+		} else if (nr == 6) {
+			joker6 = true;
+			document.getElementById("nr6joker").innerHTML = "Zwischen 2005 und 2010";
+		}
+	}
+
+	function reset() {
+		if(joker1 == true){
+			joker1 = false;
+			document.getElementById("1.1").style.display = "block";
+			document.getElementById("1.2").style.display = "block";
+		}
+		if (joker2 == true) {
+			joker2 = false;
+			document.getElementById("nr2").setAttribute("max", "100000");
+			document.getElementById("nr2").setAttribute("value", "30000");
+		}
+		if (joker3 == true) {
+			joker3 = false;
+			document.getElementById("3.1").style.display = "block";
+			document.getElementById("3.2").style.display = "block";
+		}
+		if (joker4 == true) {
+			joker4 = false;
+			document.getElementById("4.1").style.display = "block";
+			document.getElementById("4.2").style.display = "block";
+		}
+		if (joker5 == true) {
+			joker5 = false;
+			document.getElementById("nr5joker").innerHTML = "";
+		}
+		if (joker6 == true) {
+			joker6 = false;
+			document.getElementById("nr6joker").innerHTML = ""; 
+		}
+		richtigeAntworten = 0;
+		falscheAntworten = 0;
+		multiplier = 1;
+	}
+	
+</script>
+<!------------------------------------------------------------------->
+</body>
+</html>
